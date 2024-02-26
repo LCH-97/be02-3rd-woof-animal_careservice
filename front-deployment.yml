@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: container
-        image: jyk147369/front:1.8
+        image: jyk147369/front:tag
         ports:
         - containerPort: 80
       terminationGracePeriodSeconds: 5
