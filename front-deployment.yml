@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      type: frontend-app
+  template:
+    metadata:
+      labels:
+        type: frontend-app
+    spec:
+      containers:
+      - name: frontend-app
+        image: jyk147369/front:1.4
+        ports:
+        - containerPort: 80
+      terminationGracePeriodSeconds: 5
